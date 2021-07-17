@@ -74,9 +74,9 @@ module.exports = function (eleventyConfig) {
     // subpath needed for github pages e.g. user.github.com/<PATH-PREFIX>/index.html
     // if you need subdirectory for deployment,
     // add it via env var (see github pipeline)
-    let pathPrefix = '';
+    let customPathPrefix = '';
     if(process.env.hasOwnProperty('ELEVENTY_PATH_PREFIX')){
-        pathPrefix = process.env.ELEVENTY_PATH_PREFIX;
+        customPathPrefix = process.env.ELEVENTY_PATH_PREFIX;
     }
 
     // Base Config
