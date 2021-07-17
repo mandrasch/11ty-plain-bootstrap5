@@ -1,19 +1,25 @@
 # 11ty plain bootstrap5
 
-Just plain bootstrap5, (dart-)sass and autoprefixer (as recommended by official bootstrap documentation).
+Template for static site generator https://www.11ty.dev/.
+
+Just plain bootstrap5, dart-sass and autoprefixer (as recommended by [official bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/download/#source-files)). Have fun!
 
 ## Usage
 
-### Local development
+**Install via:**
 
 - `npm install`
+
+**Start local development with**
+
 - `npm start`
-- Have fun!
 
+**Where to edit?**
 
-Work with files in `src/`-folder, don't edit `_site` folder (dynamically generated). 
+- Work with files in `src/`-folder
+- **Don't** edit `_site/` folder (automatically generated)
 
-### Build
+**Generate a static build with**
 
 - `npm run build`
 
