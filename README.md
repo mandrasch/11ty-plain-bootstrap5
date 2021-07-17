@@ -31,6 +31,7 @@ Just plain bootstrap5, dart-sass and autoprefixer (as recommended by [official b
 ## Special features
 
 - Navbar dropdowns have clickable parent item and separate toggle for dropdowns (split button)
+- Sustainable Web Design: Comment out not needed bootstrap components in `src/assets/styles/main.scss`
 
 ## TODOs
 
