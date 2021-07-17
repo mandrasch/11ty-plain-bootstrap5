@@ -70,6 +70,15 @@ module.exports = function (eleventyConfig) {
     });
 
 
+    // Check if pathPrefix is set via env
+    // subpath needed for github pages e.g. user.github.com/<PATH-PREFIX>/index.html
+    // if you need subdirectory for deployment,
+    // add it via env var (see github pipeline)
+    let pathPrefix = '';
+    if(process.env.hasOwnProperty('ELEVENTY_PATH_PREFIX')){
+        pathPrefix = process.env.ELEVENTY_PATH_PREFIX;
+    }
+
     // Base Config
     return {
         dir: {
@@ -83,9 +92,6 @@ module.exports = function (eleventyConfig) {
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk',
 
-        // if you need subdirectory for deployment,
-        // add it here
-        // e,g. pages.github.com/mandrasch/11ty-plain-bootstrap5
-        // pathPrefix: "/11ty-plain-bootstrap5/"
+        pathPrefix: customPathPrefix
     }
 };

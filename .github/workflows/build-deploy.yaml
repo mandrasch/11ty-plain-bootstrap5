@@ -19,7 +19,9 @@ jobs:
         # TODO: Use repository name per default?
         run: |
           npm install
-          npm run build -- --pathprefix=11ty-plain-bootstrap5
+          npm run build
+        env:
+          ELEVENTY_PATH_PREFIX: '11ty-plain-bootstrap5'
 
       - name: Deploy to Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
