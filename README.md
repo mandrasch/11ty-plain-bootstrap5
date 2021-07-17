@@ -2,12 +2,18 @@
 
 Just plain bootstrap5, (dart-)sass and autoprefixer (as recommended by official bootstrap documentation).
 
-Have fun!
-
 ## Usage
+
+### Local development
 
 - `npm install`
 - `npm start`
+- Have fun!
+
+
+Work with files in `src/`-folder, don't edit `_site` folder (dynamically generated). 
+
+### Build
 
 - `npm run build`
 
@@ -23,6 +29,10 @@ Have fun!
 ## TODOs
 
 - Add github pipeline
+- Add codesandbox.com link
+- Add demo content with images
+- Re-add sitemap.xml (See https://github.com/maxboeck/eleventastic)
+- Re-add favicons
 
 ## License
 
