@@ -15,11 +15,12 @@ jobs:
           node-version: "14"  
 
       - name: Install and Build for Github Pages 🔧
-        # argument parsing for npm run build
-        # TODO: Use repository name per default?
         run: |
           npm install
           npm run build
+        # path prefix for github pages (hosted on subdirectory)
+        # USER.github.io/<PATH-PREFIX>/
+        # See: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
         env:
           ELEVENTY_PATH_PREFIX: '11ty-plain-bootstrap5'
 
