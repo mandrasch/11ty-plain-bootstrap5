@@ -1,0 +1,39 @@
+{# Macro function to render child items (submenus) #}
+{% macro renderNavListDropdown(childEntry) -%}
+<li>    
+    <a class="dropdown-item" href=" {{ childEntry.url | url }}">
+    {{childEntry.title}}
+    </a>
+</li>
+{%- endmacro %}
+
+{# Nav Links  #}
+<ul class="navbar-nav">
+    {%- for item in collections.all | eleventyNavigation -%}
+    {%- if item.url and item.hideInMainNav != true -%}
+    {%- set isCurrent = (item.url == page.url) -%}
+    {%- set isParent = item.url != '/' and item.url in page.url -%}
+    {%- set hasChildren = item.children.length -%}
+    {%- set randomMenuId = ('dropdown' | generateRandomIdString) -%}
+    <li class="nav-item{% if hasChildren %} dropdown{% endif %}">
+        {%- if hasChildren -%}<div class="btn-group">{%- endif -%}
+            <a class="nav-link{% if isCurrent or isParent %} active{% endif %}"
+                href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
+                {% if isCurrent %}aria-current="page" {% endif %} data-bs-toggle="{{ item.key }}" aria-expanded="false"
+                id="{{randomMenuId}}">
+                {{ item.title }}
+            </a>
+            {%- if hasChildren -%}
+            <a class="nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" href="#"
+                aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="{{randomMenuId}}">
+                {%- for child in item.children %}{{ renderNavListDropdown(child) }}{% endfor -%}
+            </ul>
+        </div><!-- eo btn-group for dropdowns -->
+        {%- endif -%}
+    </li>
+    {%- endif -%}
+    {%- endfor -%}
+</ul>

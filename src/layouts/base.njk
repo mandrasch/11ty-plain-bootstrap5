@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{site.title}} - {{ meta.title }}</title>
+
+    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+
+    {% include "meta.njk" %}
+</head>
+
+<body>
+    <!-- skiplinks -->
+    <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
+
+    {{sitexyz | dump | safe}}
+
+    {% include "header.njk" %}
+
+    <main id="main" class="main" tabindex="-1">
+        <div class="container py-4">
+            {{ content | safe }}
+        </div>
+    </main>
+
+    {% include "footer.njk" %}
+
+    <script type="text/javascript" src="{{ '/assets/scripts/bootstrap/bootstrap.bundle.min.js' | url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
+</body>
+
+</html>
