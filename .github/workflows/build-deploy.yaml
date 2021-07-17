@@ -14,13 +14,13 @@ jobs:
         with:
           node-version: "14"  
 
+      # This runs with path prefix for github pages (hosted on subdirectory)
+      # USER.github.io/<PATH-PREFIX>/
+      # See: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
       - name: Install and Build for Github Pages 🔧
         run: |
           npm install
           npm run build
-        # path prefix for github pages (hosted on subdirectory)
-        # USER.github.io/<PATH-PREFIX>/
-        # See: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
         env:
           ELEVENTY_PATH_PREFIX: '11ty-plain-bootstrap5'
 
@@ -28,7 +28,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           branch: gh-pages
-          folder: _site #the static site
+          folder: _site #the static site folder
 
       # If you need more privacy / no tracking,
       # sync your site to your own webspace
