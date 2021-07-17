@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: "14"  
 
-      - name: Install and Build 🔧
+      - name: Install and Build for Github Pages 🔧
         # argument parsing for npm run build
         # TODO: Use repository name per default?
         run: |
@@ -32,6 +32,15 @@ jobs:
       # If you need more privacy / no tracking,
       # sync your site to your own webspace
       # https://github.com/marketplace/actions/ftp-deploy
+
+      # Build again if you need another path prefix
+      # - name: Install and Build for FTP 🔧
+      #   run: |
+      #    npm install
+      #    npm run build
+      #  env:
+      #    ELEVENTY_PATH_PREFIX: '11ty-plain-bootstrap5'
+
       #- name: 📂 Sync files
       #  uses: SamKirkland/FTP-Deploy-Action@4.1.0
       #  with:
