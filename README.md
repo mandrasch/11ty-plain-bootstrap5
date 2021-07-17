@@ -6,6 +6,10 @@ Just plain bootstrap5, dart-sass and autoprefixer (as recommended by [official b
 
 Template for static site generator https://www.11ty.dev/.
 
+## Demo
+
+https://mandrasch.github.io/11ty-plain-bootstrap5/
+
 ## Usage
 
 **Install via:**
