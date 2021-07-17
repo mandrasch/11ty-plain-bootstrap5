@@ -35,7 +35,6 @@ Just plain bootstrap5, dart-sass and autoprefixer (as recommended by [official b
 
 ## TODOs
 
-- Add github pipeline
 - Add codesandbox.com link
 - Add demo content with images
 - Re-add sitemap.xml (See https://github.com/maxboeck/eleventastic)

@@ -19,8 +19,18 @@ jobs:
           npm install
           npm run build
 
-      - name: Deploy 🚀
+      - name: Deploy to Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           branch: gh-pages
           folder: _site #the static site
+
+      # If you need more privacy / no tracking,
+      # sync your site to your own webspace
+      # https://github.com/marketplace/actions/ftp-deploy
+      #- name: 📂 Sync files
+      #  uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      #  with:
+      #    server: ftp.samkirkland.com
+      #    username: myFtpUserName
+      #    password: ${{ secrets.ftp_password }}
