@@ -2,14 +2,13 @@
 
 [![Build and Deploy](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml/badge.svg)](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml)
 
-- Just plain bootstrap5, dart-sass and autoprefixer*.
-- No gulp, grunt, webpack, just `beforeBuild`-hook.
+Template for the awesome static site generator [eleventy/11ty](https://www.11ty.dev/)
+
+- Just plain bootstrap5, dart-sass and autoprefixer*
+- No gulp, grunt, webpack, just the `beforeBuild`-hook of 11ty
 - Have fun!
 
 *\* as recommended by [official bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/download/#source-files)*
-
-
-Template for static site generator https://www.11ty.dev/.
 
 ## Demo
 
