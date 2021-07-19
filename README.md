@@ -45,6 +45,7 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 - Add demo content with images
 - Re-add sitemap.xml (See https://github.com/maxboeck/eleventastic)
 - Re-add favicons
+- Add basic a11y focus styles
 
 ## License
 
