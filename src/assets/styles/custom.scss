@@ -1,0 +1,67 @@
+/* add hover dropdown (screenreader users use click/trigger collapse button event) */
+.navbar{
+    // remove padding, otherwise css hover does not work
+    // re-add padding to nav-items
+    //padding-top: .5rem;
+    //padding-bottom: .5rem;
+    padding-top:0;
+    padding-bottom:0;
+
+    .nav-item{
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+
+    .nav-item:hover{
+        border-bottom:2px solid blue;
+    }
+    a:focus{
+        outline: none;
+        border: 2px dotted red;
+    }
+    // styles for non-collapsed view
+    .navbar-collapse:not(.show) {
+        .nav-item {
+            .dropdown-menu {
+                //border:1px solid yellow;
+                margin-top: 0px; // otherwise we'll have a small area were hover get's lost
+            }
+
+            &:hover {
+                .dropdown-menu {
+                    display: block;
+                    position: absolute;
+                    margin-top: 0px;
+                }
+            }
+        }
+
+        /* hover dropdown full width class */
+        .nav-item.dropdown {
+            &--full-width {
+                position: static;
+
+                .btn-group {
+                    position: static;
+                }
+
+                .dropdown-menu {
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    top:100%;
+                }
+            }
+        }
+    }
+
+    .navbar-collapse.show{
+        .btn-group{
+            flex-wrap:wrap;
+            .dropdown-menu{
+                flex-basis:100%;
+                //border:1px solid blue;
+            }
+        }    
+    }
+}

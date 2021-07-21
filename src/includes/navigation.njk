@@ -15,7 +15,7 @@
     {%- set isParent = item.url != '/' and item.url in page.url -%}
     {%- set hasChildren = item.children.length -%}
     {%- set randomMenuId = ('dropdown' | generateRandomIdString) -%}
-    <li class="nav-item{% if hasChildren %} dropdown{% endif %}">
+    <li class="nav-item{% if hasChildren %} dropdown dropdown--full-width{% endif %}">
         {%- if hasChildren -%}<div class="btn-group">{%- endif -%}
             <a class="nav-link{% if isCurrent or isParent %} active{% endif %}"
                 href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
