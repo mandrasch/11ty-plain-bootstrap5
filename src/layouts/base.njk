@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{site.title}} - {{ meta.title }}</title>
+    <title>{{site.title}} - {{ title or meta.title }}</title>
 
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
 
@@ -14,8 +14,6 @@
 <body>
     <!-- skiplinks -->
     <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
-
-    {{sitexyz | dump | safe}}
 
     {% include "header.njk" %}
 
