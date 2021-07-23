@@ -54,9 +54,10 @@ module.exports = function (eleventyConfig) {
     // eleventyConfig.addPassthroughCopy('src/robots.txt')
     // eleventyConfig.addPassthroughCopy('src/site.webmanifest')
     // eleventyConfig.addPassthroughCopy('src/assets/favicons')
-    eleventyConfig.addPassthroughCopy('src/assets/images')
-    eleventyConfig.addPassthroughCopy('src/assets/fonts')
-    eleventyConfig.addPassthroughCopy('src/assets/styles/bootstrap-examples')
+    eleventyConfig.addPassthroughCopy('src/assets/images');
+    eleventyConfig.addPassthroughCopy('src/assets/fonts');
+    eleventyConfig.addPassthroughCopy('src/assets/styles/bootstrap-examples');
+    eleventyConfig.addPassthroughCopy('src/assets/scripts/');
 
 
     // Watch target for local dev

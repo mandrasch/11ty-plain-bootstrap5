@@ -16,23 +16,28 @@
     {%- set hasChildren = item.children.length -%}
     {%- set randomMenuId = ('dropdown' | generateRandomIdString) -%}
     <li class="nav-item{% if hasChildren %} dropdown{% endif %}">
-        {%- if hasChildren -%}<div class="btn-group">{%- endif -%}
+            {%- if hasChildren == false -%}
+            {# Standard menu nav link #}
             <a class="nav-link{% if isCurrent or isParent %} active{% endif %}"
                 href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
-                {% if isCurrent %}aria-current="page" {% endif %} data-bs-toggle="{{ item.key }}" aria-expanded="false"
-                id="{{randomMenuId}}">
+                {% if isCurrent %}aria-current="page" {% endif %}>
                 {{ item.title }}
             </a>
-            {%- if hasChildren -%}
-            <a class="nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" href="#"
-                aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropdown</span>
+            {%- else -%}
+            {# Menu nav link for bootstrap dropdowns, change role to button #}
+            <a class="nav-link{% if isCurrent or isParent %} active{% endif %} {% if hasChildren %}dropdown-toggle{% endif %}"
+                href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
+                {% if isCurrent %}aria-current="page" {% endif %} {% if hasChildren %} role="button" data-bs-toggle="dropdown" aria-expanded="false"{% endif %}
+                id="{{randomMenuId}}">
+                {{ item.title }} {% if hasChildren %}<span class="visually-hidden">Toggle Dropdown {{item.title}}</span>{% endif %}
             </a>
             <ul class="dropdown-menu" aria-labelledby="{{randomMenuId}}">
+                <li>
+                    <a class="dropdown-item" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}">{{ item.title }} Overview</a>
+                </li>
                 {%- for child in item.children %}{{ renderNavListDropdown(child) }}{% endfor -%}
             </ul>
-        </div><!-- eo btn-group for dropdowns -->
-        {%- endif -%}
+            {%- endif -%}
     </li>
     {%- endif -%}
     {%- endfor -%}

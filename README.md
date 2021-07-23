@@ -6,6 +6,7 @@ Template for the awesome static site generator [eleventy/11ty](https://www.11ty.
 
 - Just plain bootstrap5, dart-sass and autoprefixer*
 - No gulp, grunt, webpack, just the `beforeBuild`-hook of 11ty
+- Built with accessibility (#a11y) in mind
 - Have fun!
 
 *\* as recommended by [official bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/download/#source-files)*
@@ -40,8 +41,8 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 ## Special features
 
-- Navbar dropdowns have clickable parent item and separate toggle for dropdowns (split button)
-- Sustainable Web Design: Comment out not needed bootstrap components in [src/assets/styles/main.scss](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/assets/styles/main.scss)
+- Navbar dropdowns with hover (vanillajs) without disturbing keyboard accessibility (See [src/assets/scripts/main.js](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/assets/scripts/main.js) and [src/includes/navigation.njk](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/includes/navigation.njk)), inspired by https://dequeuniversity.com/. Parent item becomes first child in dropdown, therefore it is accessible as well.
+- Sustainable Web Design / Modular approach: Comment out not needed bootstrap components in [src/assets/styles/main.scss](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/assets/styles/main.scss)
 
 ## TODOs
 
@@ -49,7 +50,12 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 - Add demo content with images
 - Re-add sitemap.xml (See https://github.com/maxboeck/eleventastic)
 - Re-add favicons
+- Add minimalistisc js bundling with esbuild
+- Add simple html-minifier
+- Add minimalistisc cache busting via timestamp
 - Add basic a11y focus styles
+- Test a11y thoroughly
+
 
 ## License
 
