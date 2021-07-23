@@ -50,9 +50,9 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 - Add demo content with images
 - Re-add sitemap.xml (See https://github.com/maxboeck/eleventastic)
 - Re-add favicons
-- Add minimalistisc js bundling with esbuild
-- Add simple html-minifier
-- Add minimalistisc cache busting via timestamp
+- Add minimalistisc js bundling with esbuild https://blog.r0b.io/post/bundle-javascript-with-eleventy-and-esbuild/
+- Add simple html-minifier https://www.11ty.dev/docs/config/#transforms-example-minify-html-output
+- Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/
 - Add basic a11y focus styles
 - Test a11y thoroughly
 
