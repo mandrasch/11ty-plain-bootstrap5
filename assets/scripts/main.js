@@ -1,6 +1,7 @@
 "use strict";
-// TODO: Use IIFE
-window.addEventListener('load', function (event) {
+
+// Open dropdown menu on mouse:hover
+/*window.addEventListener('load', function (event) {
 
     // TODO: remove duplicates
 
@@ -46,4 +47,4 @@ window.addEventListener('load', function (event) {
         }, false);
         
     });
-});
+});*/
