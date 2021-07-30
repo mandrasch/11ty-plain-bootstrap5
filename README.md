@@ -4,9 +4,9 @@
 
 Template for the awesome static site generator [eleventy/11ty](https://www.11ty.dev/)
 
-- Just plain bootstrap5, dart-sass and autoprefixer*
-- No gulp, grunt, webpack, just the `beforeBuild`-hook of 11ty
-- (Built with accessibility (#a11y) in mind)
+- Just plain bootstrap5 and a simple build process:
+- SCSS compile with dart-sass and autoprefixer*
+- No gulp, grunt, webpack, just the [beforeBuild](https://www.d-hagemeier.com/en/sass-compile-11ty/)-hook of 11ty
 - Have fun!
 
 *\* as recommended by [official bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/download/#source-files)*
@@ -54,7 +54,7 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 - Add simple html-minifier https://www.11ty.dev/docs/config/#transforms-example-minify-html-output
 - Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/
 - Add basic a11y focus styles
-- Test a11y thoroughly
+- Test a11y (web accessibility) thoroughly
 
 
 ## License
