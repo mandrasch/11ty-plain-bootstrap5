@@ -41,12 +41,11 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 ## Special features
 
-- Optional - uncomment in main.js: Navbar dropdowns with hover (vanillajs) without disturbing keyboard accessibility (See [src/assets/scripts/main.js](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/assets/scripts/main.js) and [src/includes/navigation.njk](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/includes/navigation.njk)), inspired by https://dequeuniversity.com/. Parent item becomes first child in dropdown, therefore it is accessible as well.
 - Sustainable Web Design / Modular approach: Comment out not needed bootstrap components in [src/assets/styles/main.scss](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/assets/styles/main.scss)
 
 ## TODOs
 
-- Add codesandbox.com link
+- Add codesandbox.com / gitpod link
 - Add demo content with images
 - Re-add sitemap.xml (See https://github.com/maxboeck/eleventastic)
 - Re-add favicons
