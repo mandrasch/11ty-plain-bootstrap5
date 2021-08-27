@@ -11,7 +11,7 @@
  * In this file you can override bootstraps variables with your own, e.g.:
  * $body-bg: #000;
  */
-@import "variables";
+@import "variables"; // TODO: use better file name to state clearly that these are our custom overrides?
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../../node_modules/bootstrap/scss/variables";
