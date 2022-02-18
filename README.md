@@ -58,4 +58,6 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 ## License
 
+*This template is a fork / heavily inspired by https://github.com/maxboeck/eleventastic (MIT license)*
+
 MIT license
