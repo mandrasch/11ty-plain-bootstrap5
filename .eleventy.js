@@ -70,16 +70,6 @@ module.exports = function (eleventyConfig) {
         return prefix+"-"+(Math.floor(Math.random()*1000000));
     });
 
-
-    // Check if pathPrefix is set via env
-    // subpath needed for github pages e.g. user.github.com/<PATH-PREFIX>/index.html
-    // if you need subdirectory for deployment,
-    // add it via env var (see github pipeline)
-    let customPathPrefix = '';
-    if(process.env.hasOwnProperty('ELEVENTY_PATH_PREFIX')){
-        customPathPrefix = process.env.ELEVENTY_PATH_PREFIX;
-    }
-
     // Base Config
     return {
         dir: {
@@ -91,8 +81,6 @@ module.exports = function (eleventyConfig) {
         },
         templateFormats: ['njk', 'md'],
         htmlTemplateEngine: 'njk',
-        markdownTemplateEngine: 'njk',
-
-        pathPrefix: customPathPrefix
+        markdownTemplateEngine: 'njk'
     }
 };

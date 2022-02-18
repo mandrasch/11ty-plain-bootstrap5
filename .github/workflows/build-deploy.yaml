@@ -9,18 +9,18 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
-      - name: Use Node.js 14.x
+      - name: Use Node LTS
         uses: actions/setup-node@v2
         with:
-          node-version: "14"  
+          node-version: "16" # lts  
 
-      # This runs with path prefix for github pages (hosted on subdirectory)
-      # USER.github.io/<PATH-PREFIX>/
+      # This build runs with path prefix for github pages (hosted on subdirectory),
+      # for example https://<USER>.github.io/<REPO-NAME>/
       # See: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
       - name: Install and Build for Github Pages 🔧
         run: |
           npm install
-          npm run build
+          npm run build -- --pathprefix="${{ github.event.repository.name }}"
         env:
           ELEVENTY_PATH_PREFIX: '11ty-plain-bootstrap5'
 
@@ -39,8 +39,6 @@ jobs:
       #   run: |
       #    npm install
       #    npm run build
-      #  env:
-      #    ELEVENTY_PATH_PREFIX: '11ty-plain-bootstrap5'
 
       #- name: 📂 Sync files
       #  uses: SamKirkland/FTP-Deploy-Action@4.1.0
