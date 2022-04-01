@@ -23,7 +23,9 @@ jobs:
       - name: Install and Build for Github Pages 🔧
         run: |
           npm install
-          npm run build -- --pathprefix="${{ github.event.repository.name }}"
+          cross-env ELEVENTY_ENV=production npx @11ty/eleventy --pathprefix="${{ github.event.repository.name }}"
+          # This doesn't work anymore? :-/
+          # npm run build -- --pathprefix="${{ github.event.repository.name }}"
           
       - name: Deploy to Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
