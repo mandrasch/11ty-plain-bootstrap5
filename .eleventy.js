@@ -22,6 +22,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.on("beforeBuild", () => {
 
         const isProd = process.env.ELEVENTY_ENV === 'production';
+        if (isProd) {
+            console.log('Eleventy build is running on production mode');
+        }
 
         // Compile Sass
         // TODO: don't use compressed for dev?
@@ -48,7 +51,7 @@ module.exports = function (eleventyConfig) {
         "node_modules/bootstrap/dist/js/": "/assets/scripts/bootstrap/"
     });
 
-    
+
     // Pass-through files (copy them into to _site/ to make them available)
     // TODO: add them as well
     // eleventyConfig.addPassthroughCopy('src/robots.txt')
@@ -66,8 +69,8 @@ module.exports = function (eleventyConfig) {
     // RandomId function for IDs used by labelled-by
     // Thanks https://github.com/mozilla/nunjucks/issues/724#issuecomment-207581540
     // TODO: replace with addNunjucksGlobal? https://github.com/11ty/eleventy/issues/1498
-    eleventyConfig.addFilter("generateRandomIdString", function(prefix) {
-        return prefix+"-"+(Math.floor(Math.random()*1000000));
+    eleventyConfig.addFilter("generateRandomIdString", function (prefix) {
+        return prefix + "-" + (Math.floor(Math.random() * 1000000));
     });
 
     // Base Config
