@@ -55,7 +55,6 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 - Add basic a11y focus styles
 - Test a11y (web accessibility) thoroughly
 
-
 ## License
 
 *This template is a fork / heavily inspired by https://github.com/maxboeck/eleventastic (MIT license)*
