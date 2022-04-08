@@ -4,6 +4,9 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 // https://www.11ty.dev/docs/plugins/image/#use-this-in-your-templates
 const Image = require("@11ty/eleventy-img");
 
+const pathPrefix = process.env.PATH_PREFIX || '/'; // https://github.com/11ty/eleventy/issues/1641
+console.log('pathPrefix is set to ...', pathPrefix);
+
 async function imageShortcode(src, alt, sizes = "100vw") {
   if (alt === undefined) {
     // You bet we throw an error on missing alt (alt="" works okay)
@@ -11,8 +14,9 @@ async function imageShortcode(src, alt, sizes = "100vw") {
   }
 
   let metadata = await Image(src, {
-    widths: [300, 600],
+    widths: [600, 1200],
     formats: ['webp', 'jpeg'],
+    urlPath: pathPrefix + 'img/'
     // outputDir: "./img/" is default
   });
 
