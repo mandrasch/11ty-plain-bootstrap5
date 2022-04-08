@@ -24,7 +24,8 @@ async function imageShortcode(src, alt, sizes = "100vw") {
   let metadata = await Image(src, {
     widths: [600, 1200],
     formats: ['webp', 'jpeg'],
-    urlPath: urlPath
+    urlPath: urlPath,
+    outputDir: './_site/img/' // passthrough below didn't work, write to output dr?
     // outputDir: "./img/" is default
   });
 
@@ -63,6 +64,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
 
   // Copy transformed images
+  // TODO: this is executed too soon? imgs not there?
   eleventyConfig.addPassthroughCopy("img/");
 
   // Important for watch: Eleventy will not add a watch for files or folders that
