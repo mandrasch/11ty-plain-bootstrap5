@@ -4,7 +4,11 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 // https://www.11ty.dev/docs/plugins/image/#use-this-in-your-templates
 const Image = require("@11ty/eleventy-img");
 
-const pathPrefix = process.env.PATH_PREFIX || '/'; // https://github.com/11ty/eleventy/issues/1641
+const pathPrefix = process.env.PATH_PREFIX || '/';
+if (pathPrefix != '/') {
+  pathPrefix = '/' + pathPrefix + '/';  // https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
+}
+// https://github.com/11ty/eleventy/issues/1641
 console.log('pathPrefix is set to ...', pathPrefix);
 
 async function imageShortcode(src, alt, sizes = "100vw") {
