@@ -1,10 +1,10 @@
 ---
 layout: base
 eleventyNavigation:
-    key: About
+  key: About
+  order: 1
 ---
 
 <p>About us</p>
 
 ### test markdown
-

@@ -6,32 +6,100 @@ layout: base
 eleventyNavigation:
   key: Home
 ---
-<h1>Get started with Bootstrap5 and 11ty</h1>
-<p class="fs-5 col-md-8">11ty (eleventy) is a simple and awesome static site generator. It's a great choice for sustainable web design projects. This repository contains a fresh bootstrap5 with minimal adjustments and web accessibility in mind. It is still work in progress. Have fun trying it out!</p>
 
-<div class="mb-5">
-  <a href="https://github.com/mandrasch/11ty-plain-bootstrap5" class="btn btn-primary btn-lg px-4">Fork me on github.com</a>
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-2">
+    <h1 class="display-5 fw-bold">{{ site.title }}</h1>
+    <p class="col-md-10 fs-4 mb-0 pt-2">
+      Get started with the simple and awesome static site generator Eleventy and Bootstrap 5.
+      <!-- This template
+      contains Bootstrap (via npm), LaravelMix for compiling JS/SCSS and some small additions like eleventy-navigation.
+      Other than that - just plain Bootstrap 5 and Eleventy. --><br /><br />
+    </p>
+    <a class="btn btn-primary btn-lg" href="https://github.com/mandrasch/11ty-plain-bootstrap5">
+      See template on GitHub
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-github"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+        />
+      </svg>
+    </a>
+    <p class="mt-4">
+      <small>Status: Always a bit "work in progress", but good to go.</small>
+    </p>
+  </div>
 </div>
 
-<hr class="col-3 col-md-2 mb-5">
-
-<div class="row g-5">
-  <div class="col-md-6">
-    <h2>Starter projects</h2>
-    <p>Ready to beyond the starter template? Check out these examples.</p>
-    <ul class="icon-list">
-      <li><a href="https://getbootstrap.com/docs/5.0/examples/" rel="noopener" target="_blank">Bootstrap examples</a></li>
-      <li><a href="https://www.11ty.dev/docs/starter/" rel="noopener" target="_blank">Eleventy starters</a></li>
-    </ul>
+<div class="row align-items-md-stretch">
+  <div class="col-md-6 mt-3">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
+      <h2>Hello Darkness!</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua.
+      </p>
+      <button class="btn btn-outline-light" type="button">Example button</button>
+    </div>
   </div>
+  <div class="col-md-6 mt-3">
+    <div class="h-100 p-5 border rounded-3" style="background-color: #ff7979">
+      <h2>My old Friend</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      </p>
+      <button class="btn btn-outline-dark" type="button">Example button</button>
+    </div>
+  </div>
+  <div class="col-md-6 mt-3">
+    <div class="h-100 p-5 border rounded-3" style="background-color: #f6e58d">
+      <h2>Just a quick test</h2>
+      <p>Just a quick check if all imports work fine.</p>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+      </button>
 
-  <div class="col-md-6">
-    <h2>Guides</h2>
-    <p>Here are some more tutorials for you.</p>
-    <ul class="icon-list">
-      <li><a href="https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr" rel="noopener" > Eleventy (11ty) Static HTML Theme Conversion (YouTube)</a></li>
-      <li><a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" rel="noopener" >Bootstrap quick start guide</a></li>
-      <li><a href="https://www.11ty.dev/docs/getting-started/" rel="noopener" >Eleventy quick start guide</a></li>
-    </ul>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mt-3">
+    <div class="h-100 p-5 rounded-3" style="background-color: #7ed6df">
+      <h2>Sustainable Web Design?</h2>
+      <p>
+        Finished with developing your 11ty site? Great! If you're interested in developing sustainable web sites as
+        well, check out:
+      </p>
+      <a class="btn btn-outline-dark" href="sustainablewebdesign.org" target="_blank">sustainablewebdesign.org</a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 py-5 text-center">
+    Layout based on <a href="https://getbootstrap.com/docs/5.0/examples/">Jumbotron Example</a>, JS/SCSS compiling via
+    <a href="https://github.com/bergwerk/11ty-mix">bergwerk/11ty-mix</a>.
   </div>
 </div>

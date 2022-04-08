@@ -5,11 +5,11 @@
 Template for the awesome static site generator [eleventy/11ty](https://www.11ty.dev/)
 
 - Just plain bootstrap5 and a simple build process:
-  - SCSS compile with dart-sass and autoprefixer*
+  - SCSS compile with dart-sass and autoprefixer\*
   - No gulp, grunt, webpack, just the [beforeBuild](https://www.d-hagemeier.com/en/sass-compile-11ty/)-hook of 11ty
 - Have fun!
 
-*\* as recommended by [official bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/download/#source-files)*
+_\* as recommended by [official bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/download/#source-files)_
 
 ## Demo
 
@@ -57,6 +57,6 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 ## License
 
-*This template is a fork / heavily inspired by https://github.com/maxboeck/eleventastic (MIT license)*
+_This template is a fork / heavily inspired by https://github.com/maxboeck/eleventastic (MIT license)_
 
 MIT license

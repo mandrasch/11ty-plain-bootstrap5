@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ meta.lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ site.title }} - {{ title or meta.title }}</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{site.title}} - {{ title or meta.title }}</title>
-
-    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+    <link rel="stylesheet" href="{{ '/dist/app.css' | url }}" />
 
     <!-- TODO: re-add meta {% include "meta.njk" %} -->
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- skiplinks -->
     <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
 
     {% include "header.njk" %}
 
     <main id="main" class="main" tabindex="-1">
-        <div class="container py-4">
-            {{ content | safe }}
-        </div>
+      <div class="container py-4">
+        {{ content | safe }}
+      </div>
     </main>
 
     {% include "footer.njk" %}
-</body>
-
+    <script type="text/javascript" src="{{ '/dist/app.js' | url }}"></script>
+  </body>
 </html>

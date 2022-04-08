@@ -1,25 +1,60 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss'); // needed for absoluteUrl feature
+const pluginRss = require("@11ty/eleventy-plugin-rss"); // needed for absoluteUrl feature
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-
-const sass = require('sass');
-const postcss = require('postcss');
-const autoprefixer = require('autoprefixer');
-const fs = require('fs-extra');
 
 module.exports = function (eleventyConfig) {
 
-    // Site title
-    // TODO: implement when available in v.1.0.0
-    // eleventyConfig.addGlobalData("siteTitle", "Plain Bootstrap5");
+  // Set site title
+  eleventyConfig.addGlobalData("site", {
+    title: "11ty-plain-bs5"
+  });
 
-    // Add plugins
-    eleventyConfig.addPlugin(pluginRss);
-    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  // Add plugins
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-    // SASS (dart-sass) and postcss auto vendor prefixing
-    // thanks to https://www.d-hagemeier.com/de/sass-compile-11ty/
-    // auto prefixing is needed, see: https://getbootstrap.com/docs/5.0/getting-started/download/#source-files
-    eleventyConfig.on("beforeBuild", () => {
+  // Copy dist/ files from laravel mix
+  eleventyConfig.addPassthroughCopy("dist/"); // path is relative from root
+
+  // Copy (static) files to output (_site)
+  eleventyConfig.addPassthroughCopy("src/assets");
+
+  // Watch for changes (and reload)
+  eleventyConfig.addWatchTarget("./src/assets"); // normal (static) assets
+  eleventyConfig.addWatchTarget("./dist") // laravel-mix output changes
+
+  // Important for watch: Eleventy will not add a watch for files or folders that
+  // are in .gitignore,unless setUseGitIgnore is turned off. See this chapter:
+  // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
+  eleventyConfig.setUseGitIgnore(false);
+
+  // RandomId function for IDs used by labelled-by
+  // Thanks https://github.com/mozilla/nunjucks/issues/724#issuecomment-207581540
+  // TODO: replace with addNunjucksGlobal? https://github.com/11ty/eleventy/issues/1498
+  eleventyConfig.addFilter("generateRandomIdString", function (prefix) {
+    return prefix + "-" + Math.floor(Math.random() * 1000000);
+  });
+
+  // Base Config
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "includes", // this path is releative to input-path (src/)
+      layouts: "layouts", // this path is releative to input-path (src/)
+      data: "data", // this path is releative to input-path (src/)
+    },
+    templateFormats: ["njk", "md"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+  };
+
+  // OLD:
+
+  // SASS (dart-sass) and postcss auto vendor prefixing
+  // thanks to https://www.d-hagemeier.com/de/sass-compile-11ty/
+  // auto prefixing is needed, see: https://getbootstrap.com/docs/5.0/getting-started/download/#source-files
+  // We're using laravel-mix now
+  /*eleventyConfig.on("beforeBuild", () => {
 
         const isProd = process.env.ELEVENTY_ENV === 'production';
         if (isProd) {
@@ -43,47 +78,8 @@ module.exports = function (eleventyConfig) {
                     if (err) throw err;
                 });
             });
-    });
-
-    // copy bootstrap js files
-    // See: https://getbootstrap.com/docs/5.0/getting-started/contents/#js-files
-    eleventyConfig.addPassthroughCopy({
-        "node_modules/bootstrap/dist/js/": "/assets/scripts/bootstrap/"
-    });
+    });*/
 
 
-    // Pass-through files (copy them into to _site/ to make them available)
-    // TODO: add them as well
-    // eleventyConfig.addPassthroughCopy('src/robots.txt')
-    // eleventyConfig.addPassthroughCopy('src/site.webmanifest')
-    // eleventyConfig.addPassthroughCopy('src/assets/favicons')
-    eleventyConfig.addPassthroughCopy('src/assets/images');
-    eleventyConfig.addPassthroughCopy('src/assets/fonts');
-    eleventyConfig.addPassthroughCopy('src/assets/styles/bootstrap-examples');
-    eleventyConfig.addPassthroughCopy('src/assets/scripts/');
 
-
-    // Watch target for local dev
-    eleventyConfig.addWatchTarget('./src/assets');
-
-    // RandomId function for IDs used by labelled-by
-    // Thanks https://github.com/mozilla/nunjucks/issues/724#issuecomment-207581540
-    // TODO: replace with addNunjucksGlobal? https://github.com/11ty/eleventy/issues/1498
-    eleventyConfig.addFilter("generateRandomIdString", function (prefix) {
-        return prefix + "-" + (Math.floor(Math.random() * 1000000));
-    });
-
-    // Base Config
-    return {
-        dir: {
-            input: 'src',
-            output: '_site',
-            includes: 'includes', // this path is releative to input-path (src/)
-            layouts: 'layouts', // this path is releative to input-path (src/)
-            data: "data" // this path is releative to input-path (src/)
-        },
-        templateFormats: ['njk', 'md'],
-        htmlTemplateEngine: 'njk',
-        markdownTemplateEngine: 'njk'
-    }
 };

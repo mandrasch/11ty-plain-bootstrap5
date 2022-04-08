@@ -1,14 +1,16 @@
 {# Macro function to render child items (submenus) #}
 {% macro renderNavListDropdown(childEntry) -%}
-<li>    
+<li>
     <a class="dropdown-item" href=" {{ childEntry.url | url }}">
     {{childEntry.title}}
     </a>
 </li>
 {%- endmacro %}
 
+{# See: https://www.11ty.dev/docs/plugins/navigation/ #}
+
 {# Nav Links  #}
-<ul class="navbar-nav">
+<ul class="navbar-nav ms-auto">
     {%- for item in collections.all | eleventyNavigation -%}
     {%- if item.url and item.hideInMainNav != true -%}
     {%- set isCurrent = (item.url == page.url) -%}
@@ -42,3 +44,5 @@
     {%- endif -%}
     {%- endfor -%}
 </ul>
+
+{# This file is ignored by prettier by now /bc too much damage ;-), see .prettierignore #}
