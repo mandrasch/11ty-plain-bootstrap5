@@ -14,10 +14,17 @@ async function imageShortcode(src, alt, sizes = "100vw") {
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
 
+  // workaround, github just returns '11ty-plain-bootstrap5', we need slashes
+  // TODO: find nicer way
+  let urlPath = "/img/"; // default
+  if (pathPrefix != '/') {
+    urlPath = `/${pathPrefix}/img/`;
+  }
+
   let metadata = await Image(src, {
     widths: [600, 1200],
     formats: ['webp', 'jpeg'],
-    // urlPath: pathPrefix + 'img/'
+    urlPath: urlPath
     // outputDir: "./img/" is default
   });
 
