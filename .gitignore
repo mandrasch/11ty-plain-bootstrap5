@@ -4,3 +4,5 @@
 # laravel mix output directory
 /dist
 /mix-manifest.json
+# eleventy-img output directory
+/img

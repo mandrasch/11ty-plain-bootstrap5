@@ -20,3 +20,21 @@
   display: inline-block;
   vertical-align: -0.125em;
 }
+
+.img-fit-cover-container {
+  &.rounded-3 {
+    picture img {
+      border-radius: 0.3rem !important;
+    }
+  }
+  picture {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  picture img {
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+  }
+}

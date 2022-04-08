@@ -1,11 +1,43 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss"); // needed for absoluteUrl feature
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+// https://www.11ty.dev/docs/plugins/image/#use-this-in-your-templates
+const Image = require("@11ty/eleventy-img");
+
+async function imageShortcode(src, alt, sizes = "100vw") {
+  if (alt === undefined) {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: [300, 600],
+    formats: ['webp', 'jpeg'],
+    // outputDir: "./img/" is default
+  });
+
+  let lowsrc = metadata.jpeg[0];
+  let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+  return `<picture>
+    ${Object.values(metadata).map(imageFormat => {
+    return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+  }).join("\n")}
+      <img
+        src="${lowsrc.url}"
+        width="${highsrc.width}"
+        height="${highsrc.height}"
+        alt="${alt}"
+        loading="lazy"
+        decoding="async">
+    </picture>`;
+}
+
 module.exports = function (eleventyConfig) {
 
   // Set site title
   eleventyConfig.addGlobalData("site", {
-    title: "11ty-plain-bs5"
+    title: "11ty-plain-bootstrap5"
   });
 
   // Add plugins
@@ -18,14 +50,17 @@ module.exports = function (eleventyConfig) {
   // Copy (static) files to output (_site)
   eleventyConfig.addPassthroughCopy("src/assets");
 
-  // Watch for changes (and reload)
-  eleventyConfig.addWatchTarget("./src/assets"); // normal (static) assets
-  eleventyConfig.addWatchTarget("./dist") // laravel-mix output changes
+  // Copy transformed images
+  eleventyConfig.addPassthroughCopy("img/");
 
   // Important for watch: Eleventy will not add a watch for files or folders that
-  // are in .gitignore,unless setUseGitIgnore is turned off. See this chapter:
+  // are in .gitignore (--> dist/),unless setUseGitIgnore is turned off. See this chapter:
   // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
   eleventyConfig.setUseGitIgnore(false);
+
+  // Watch for changes (and reload browser)
+  eleventyConfig.addWatchTarget("./src/assets"); // normal (static) assets
+  eleventyConfig.addWatchTarget("./dist") // laravel-mix output changes
 
   // RandomId function for IDs used by labelled-by
   // Thanks https://github.com/mozilla/nunjucks/issues/724#issuecomment-207581540
@@ -33,6 +68,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("generateRandomIdString", function (prefix) {
     return prefix + "-" + Math.floor(Math.random() * 1000000);
   });
+
+  // eleventy-img config
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
   // Base Config
   return {
@@ -47,39 +85,4 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
-
-  // OLD:
-
-  // SASS (dart-sass) and postcss auto vendor prefixing
-  // thanks to https://www.d-hagemeier.com/de/sass-compile-11ty/
-  // auto prefixing is needed, see: https://getbootstrap.com/docs/5.0/getting-started/download/#source-files
-  // We're using laravel-mix now
-  /*eleventyConfig.on("beforeBuild", () => {
-
-        const isProd = process.env.ELEVENTY_ENV === 'production';
-        if (isProd) {
-            console.log('Eleventy build is running on production mode');
-        }
-
-        // Compile Sass
-        // TODO: don't use compressed for dev?
-        let result = sass.renderSync({
-            file: "src/assets/styles/main.scss",
-            sourceMap: true,
-            outputStyle: "compressed",
-        });
-
-        // Optimize and write file with PostCSS
-        let css = result.css.toString();
-        postcss([autoprefixer])
-            .process(css, { from: "assets/styles/main.css", to: "asset/styles/main.css" })
-            .then((result) => {
-                fs.outputFile("_site/assets/styles/main.css", result.css, (err) => {
-                    if (err) throw err;
-                });
-            });
-    });*/
-
-
-
 };

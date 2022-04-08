@@ -2,18 +2,18 @@
 
 [![Build and Deploy](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml/badge.svg)](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml)
 
-Template for the awesome static site generator [eleventy/11ty](https://www.11ty.dev/)
+Template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/)
 
-- Just plain bootstrap5 and a simple build process:
-  - SCSS compile with dart-sass and autoprefixer\*
-  - No gulp, grunt, webpack, just the [beforeBuild](https://www.d-hagemeier.com/en/sass-compile-11ty/)-hook of 11ty
-- Have fun!
+- Bootstrap 5 (via npm)
+- Laravel Mix (with Autoprefixer enabled by default)
 
-_\* as recommended by [official bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/download/#source-files)_
+Plugins used:
 
-## Demo
+- [eleventy-navigation](https://www.11ty.dev/docs/plugins/navigation/)
+- [eleventy-img](https://www.11ty.dev/docs/plugins/image/)
+- [eleventy-rss](https://www.11ty.dev/docs/plugins/rss/) (to get absolute URLs for social media OG-tags)
 
-https://mandrasch.github.io/11ty-plain-bootstrap5/
+**Demo:** https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 ## Usage
 
@@ -23,7 +23,7 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 **Start local development with**
 
-- `npm start`
+- `npm run dev`
 
 **Where to edit?**
 
@@ -36,27 +36,32 @@ https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 ## Credits
 
-- This template is a fork of https://github.com/maxboeck/eleventastic (MIT license), although I removed a lot of features because of keeping it simple for now.
-- Thanks to https://www.d-hagemeier.com/de/sass-compile-11ty/ for describing how `beforeBuild` works and can be used for dart-sass compilation.
+- Compilation of SCSS/JS via [bergwerk/11ty-mix](https://github.com/bergwerk/11ty-mix) by [@marvinhuebner](https://github.com/marvinhuebner)
+- Inspired by https://github.com/maxboeck/eleventastic (MIT license)
+- https://5balloons.info/setting-up-bootstrap-5-workflow-using-laravel-mix-webpack/
+- [Eleventy (11ty) Static HTML Theme Conversion (YouTube)](https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr)
 
-## Special features
+## Technical background:
 
-- Sustainable Web Design / Modular approach: Comment out not needed bootstrap components in [src/assets/styles/main.scss](https://github.com/mandrasch/11ty-plain-bootstrap5/blob/main/src/assets/styles/main.scss)
+Bootstrap information for npm/sass:
+
+- https://getbootstrap.com/docs/5.0/getting-started/download/#source-files
+- https://getbootstrap.com/docs/5.0/customize/sass/
+
+Sustainable Web Design:
+
+- Comment out not needed bootstrap components in `src/scss/app.scss`
 
 ## TODOs
 
-- Add codesandbox.com / gitpod link
-- Add demo content with images
-- Re-add sitemap.xml (See https://github.com/maxboeck/eleventastic)
-- Re-add favicons
-- Add minimalistisc js bundling with esbuild, use bootstrap modular https://blog.r0b.io/post/bundle-javascript-with-eleventy-and-esbuild/
-- Add simple html-minifier https://www.11ty.dev/docs/config/#transforms-example-minify-html-output
-- Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/
-- Add basic a11y focus styles
-- Test a11y (web accessibility) thoroughly
+- [ ] Add gitpod link
+- [ ] Add demo content with images
+- [ ] Add sitemap.xml (See https://github.com/maxboeck/eleventastic)
+- [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/?
+- [ ] Add basic a11y focus styles
 
 ## License
 
-_This template is a fork / heavily inspired by https://github.com/maxboeck/eleventastic (MIT license)_
-
 MIT license
+
+_(License is for compatibility purposes only. You don't have attribute my additions, mostly just config stuff done.)_
