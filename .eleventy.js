@@ -84,6 +84,8 @@ module.exports = function (eleventyConfig) {
       includes: "includes", // this path is releative to input-path (src/)
       layouts: "layouts", // this path is releative to input-path (src/)
       data: "data", // this path is releative to input-path (src/)
+      // important for github pages build (subdirectory):
+      pathPrefix: pathPrefix
     },
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
