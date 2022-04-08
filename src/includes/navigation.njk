@@ -35,7 +35,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="{{randomMenuId}}">
                 <li>
-                    <a class="dropdown-item" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}">{{ item.title }} Overview</a>
+                    <a class="dropdown-item" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"><!-- {{ item.title }}-->Overview</a>
                 </li>
                 {%- for child in item.children %}{{ renderNavListDropdown(child) }}{% endfor -%}
             </ul>

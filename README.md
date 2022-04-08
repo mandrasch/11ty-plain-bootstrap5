@@ -7,13 +7,13 @@ Template for the awesome static site generator [Eleventy/11ty](https://www.11ty.
 - Bootstrap 5 (npm)
 - SCSS/JS compilation with Laravel Mix (incl. autoprefixer)
 
+**Demo:** https://mandrasch.github.io/11ty-plain-bootstrap5/
+
 Plugins used:
 
 - [eleventy-navigation](https://www.11ty.dev/docs/plugins/navigation/)
 - [eleventy-img](https://www.11ty.dev/docs/plugins/image/)
 - [eleventy-rss](https://www.11ty.dev/docs/plugins/rss/) (to get absolute URLs for social media OG-tags)
-
-**Demo:** https://mandrasch.github.io/11ty-plain-bootstrap5/
 
 ## Usage
 
@@ -40,6 +40,7 @@ Plugins used:
 - Inspired by https://github.com/maxboeck/eleventastic (MIT license)
 - https://5balloons.info/setting-up-bootstrap-5-workflow-using-laravel-mix-webpack/
 - [Eleventy (11ty) Static HTML Theme Conversion (YouTube)](https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr)
+- Layout based on [Jumbotron Example](https://getbootstrap.com/docs/5.0/examples/)
 
 ## Technical background:
 
