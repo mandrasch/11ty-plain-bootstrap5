@@ -5,9 +5,6 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
 
 const pathPrefix = process.env.PATH_PREFIX || '/';
-if (pathPrefix != '/') {
-  pathPrefix = '/' + pathPrefix + '/';  // https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
-}
 // https://github.com/11ty/eleventy/issues/1641
 console.log('pathPrefix is set to ...', pathPrefix);
 
@@ -88,11 +85,11 @@ module.exports = function (eleventyConfig) {
       includes: "includes", // this path is releative to input-path (src/)
       layouts: "layouts", // this path is releative to input-path (src/)
       data: "data", // this path is releative to input-path (src/)
-      // important for github pages build (subdirectory):
-      pathPrefix: pathPrefix
     },
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
+    // important for github pages build (subdirectory):
+    pathPrefix: pathPrefix
   };
 };
