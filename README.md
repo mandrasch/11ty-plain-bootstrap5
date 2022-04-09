@@ -55,11 +55,12 @@ Sustainable Web Design:
 
 ## TODOs
 
-- [ ] Add gitpod link
-- [ ] Add demo content with images
+- [ ] Add "Open in Gitpod" link
+- [ ] Add more demo content with images
 - [ ] Add sitemap.xml (See https://github.com/maxboeck/eleventastic)
 - [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/?
 - [ ] Add basic a11y focus styles
+- [ ] Try https://github.com/11ty/eleventy-plugin-vite with Eleventy v2?
 
 ## License
 
