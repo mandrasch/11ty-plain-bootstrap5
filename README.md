@@ -4,8 +4,8 @@
 
 Template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/)
 
-- Bootstrap 5 (npm)
-- SCSS/JS compilation with Laravel Mix (incl. autoprefixer)
+- Bootstrap 5 (via npm)
+- Laravel Mix for scss / javascript compilation (incl. Autoprefixer)
 
 **Demo:** https://mandrasch.github.io/11ty-plain-bootstrap5/
 
