@@ -1,19 +1,30 @@
-{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
+{# We use eleventy-rss plugin absoluteUrl filter as helper for absolute URL generation #}
 
 {# General #}
-<meta name="description" content="{{ description or meta.description }}">
-<link rel="canonical" href="{{ absolutePageUrl }}">
+<meta name="description" content="{{ meta.description or site.description }}">
 
 {# Open Graph #}
-<meta property="og:site_name" content="{{ meta.title }}">
-<meta property="og:title" content="{{ title or meta.title }}">
-<meta property="og:description" content="{{ description  or meta.description }}">
-<meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:locale" content="{{ meta.locale }}">
-<meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
-{%- if image -%}
-    <meta property="og:image" content="{{ image | url | absoluteUrl(meta.url) }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ meta.title or site.title }}">
+<meta property="og:description" content="{{ meta.description or site.description }}">
+<meta property="og:url" content="{{ page.url | url | absoluteUrl(site.baseUrl) }}">
+<meta property="og:locale" content="{{ site.local or meta.locale }}">
+
+{%- if meta.image -%}
+<meta property="og:image" content="{{ meta.image | url | absoluteUrl(site.baseUrl) }}">
 {%- endif -%}
+{# eo Open Graph #}
+
+{# Twitter #}
+<meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{{ title or meta.title }}">
+<meta name="twitter:description" content="{{ meta.description or site.description}}">
+{%- if meta.image -%}
+<meta property="twitter:image" content="{{ meta.image | url | absoluteUrl(site.baseUrl) }}">
+{%- endif -%}
+{# eo Twitter #}
+
+
 
 {# Favicon #}
 <link rel="icon" href="{{ '/assets/favicons/favicon.ico' | url }}">

@@ -1,12 +1,15 @@
 ---
 meta:
   lang: en
-  title: Welcome
+  title: 11ty-plain-bootstrap5
+  image: "/assets/images/open-graph/teaser.jpeg"
+  description: Template for static site generator Eleventy with Boostrap 5 and SCSS/JS compilation via laravel-mix.
 layout: base
 eleventyNavigation:
   key: Home
 ---
 
+{{ site | dump }}
 <div class="p-5 mb-4 bg-light rounded-3">
   <div class="container-fluid py-2">
     <h1 class="display-5 fw-bold">{{ site.title }}</h1>

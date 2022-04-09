@@ -1,12 +1,28 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss"); // needed for absoluteUrl feature
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+// Base setup for builds, needed for og tags and correct image paths
+// (mostly for github pages deployment, see build-deploy.yaml)
+const baseUrl = process.env.BASE_URL || 'http://localhost:8080';
+// e.g. 'https://mandrasch.github.io/'
+const pathPrefix = process.env.PATH_PREFIX || '/';
+// e.g. '/11ty-plain-boostrap5/'
+console.log('baseUrl is set to ...', baseUrl);
+console.log('pathPrefix is set to ...', pathPrefix);
+
+// will be accessible in all templates via
+// see "eleventyConfig.addGlobalData("site", globalData);"" below
+// related: https://github.com/11ty/eleventy/issues/1641
+const globalSiteData = {
+  title: "11ty-plain-bootstrap5",
+  description: "Template for static site generator Eleventy with Boostrap 5 and SCSS/JS compilation via laravel-mix.",
+  locale: 'en',
+  baseUrl: baseUrl,
+  pathPrefix: pathPrefix,
+}
+
 // https://www.11ty.dev/docs/plugins/image/#use-this-in-your-templates
 const Image = require("@11ty/eleventy-img");
-
-const pathPrefix = process.env.PATH_PREFIX || '/';
-// https://github.com/11ty/eleventy/issues/1641
-console.log('pathPrefix is set to ...', pathPrefix);
 
 async function imageShortcode(src, alt, sizes = "100vw") {
   if (alt === undefined) {
@@ -14,19 +30,14 @@ async function imageShortcode(src, alt, sizes = "100vw") {
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
 
-  // workaround, github just returns '11ty-plain-bootstrap5', we need slashes
-  // TODO: find nicer way
-  let urlPath = "/img/"; // default
-  if (pathPrefix != '/') {
-    urlPath = `/${pathPrefix}/img/`;
-  }
-
+  // TODO: pathPrefix must be '/path/', check existence of trailing slash?!
   let metadata = await Image(src, {
     widths: [600, 1200],
     formats: ['webp', 'jpeg'],
-    urlPath: urlPath,
-    outputDir: './_site/img/' // passthrough below didn't work, write to output dr?
+    urlPath: `${pathPrefix}img`,
     // outputDir: "./img/" is default
+    outputDir: './_site/img/' // passthrough below didn't work, write to output dir by now
+
   });
 
   let lowsrc = metadata.jpeg[0];
@@ -49,9 +60,7 @@ async function imageShortcode(src, alt, sizes = "100vw") {
 module.exports = function (eleventyConfig) {
 
   // Set site title
-  eleventyConfig.addGlobalData("site", {
-    title: "11ty-plain-bootstrap5"
-  });
+  eleventyConfig.addGlobalData("site", globalSiteData);
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
