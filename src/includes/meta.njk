@@ -16,7 +16,7 @@
 {# eo Open Graph #}
 
 {# Twitter #}
-<meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:card" content="{% if meta.image -%}summary_large_image{% else %}summary{% endif %}">
 <meta name="twitter:title" content="{{ title or meta.title }}">
 <meta name="twitter:description" content="{{ meta.description or site.description}}">
 {%- if meta.image -%}
