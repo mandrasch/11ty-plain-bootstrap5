@@ -29,6 +29,8 @@ Plugins used:
 
 - `npm run dev`
 
+Preview runs on http://localhost:8080/.
+
 **Where to edit?**
 
 - Work with files in `src/`-folder
@@ -70,6 +72,7 @@ Sustainable Web Design:
 - [ ] Add basic a11y focus styles
 - [ ] Try https://github.com/11ty/eleventy-plugin-vite with Eleventy v2?
 - [ ] Check a11y with WAVE, aXe, etc. or use automated workflow, e.g. pa11y https://rodneylab.com/sveltekit-accessibility-testing
+- [ ] Add PWA features (see lighthouse suggestions e.g.)
 
 ## License
 
