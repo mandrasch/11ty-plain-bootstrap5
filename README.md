@@ -39,6 +39,8 @@ Plugins used:
 
 - `npm run build`
 
+_Advice: `BASE_URL` should be set as node env variable for open graph image support (they need full instead of relative URLs. You can strip them out as well in `meta.njk`. See `.github/workflows/build-deploy.yaml` for information. Currently it defaults to http://localhost:8080 if no env var is set.)_
+
 ## Credits
 
 - Compilation of SCSS/JS via [bergwerk/11ty-mix](https://github.com/bergwerk/11ty-mix) by [@marvinhuebner](https://github.com/marvinhuebner)
@@ -61,8 +63,8 @@ Sustainable Web Design:
 
 ## TODOs
 
-- [ ] Add "Open in Gitpod" link
-- [ ] Add more demo content with images
+- [ ] Add more demo content with image examples
+- [ ] Improve handling of absolute URLs for open graph image information
 - [ ] Add sitemap.xml (See https://github.com/maxboeck/eleventastic)
 - [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/?
 - [ ] Add basic a11y focus styles
