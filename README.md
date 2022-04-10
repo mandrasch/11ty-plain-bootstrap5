@@ -30,6 +30,7 @@ Plugins used:
 **Where to edit?**
 
 - Work with files in `src/`-folder
+- Homepage: `src/index.njk`, Config: `.eleventy.js`
 - **Don't** edit `_site/` folder (automatically generated)
 
 **Generate a static build with**
@@ -39,9 +40,10 @@ Plugins used:
 ## Credits
 
 - Compilation of SCSS/JS via [bergwerk/11ty-mix](https://github.com/bergwerk/11ty-mix) by [@marvinhuebner](https://github.com/marvinhuebner)
+- Some icons used of https://icons.getbootstrap.com/ (included via svg inline)
 - Inspired by https://github.com/maxboeck/eleventastic (MIT license)
 - https://5balloons.info/setting-up-bootstrap-5-workflow-using-laravel-mix-webpack/
-- [Eleventy (11ty) Static HTML Theme Conversion (YouTube)](https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr)
+- Learned a lot with [Eleventy (11ty) Static HTML Theme Conversion (YouTube)](https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr)
 - Layout based on [Jumbotron Example](https://getbootstrap.com/docs/5.0/examples/)
 
 ## Technical background:
@@ -63,6 +65,7 @@ Sustainable Web Design:
 - [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/?
 - [ ] Add basic a11y focus styles
 - [ ] Try https://github.com/11ty/eleventy-plugin-vite with Eleventy v2?
+- [ ] Check a11y with WAVE, aXe, etc. or use automated workflow, e.g. pa11y https://rodneylab.com/sveltekit-accessibility-testing
 
 ## License
 
