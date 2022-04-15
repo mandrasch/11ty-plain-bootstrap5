@@ -52,6 +52,11 @@ _Advice: `BASE_URL` should be set as node env variable for open graph image supp
 - Learned a lot with [Eleventy (11ty) Static HTML Theme Conversion (YouTube)](https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr)
 - Layout based on [Jumbotron Example](https://getbootstrap.com/docs/5.0/examples/)
 
+## Alternatives
+
+- https://11straps.com/
+- https://github.com/mesinkasir/eleventyblog
+
 ## Technical background:
 
 Bootstrap information for npm/sass:
