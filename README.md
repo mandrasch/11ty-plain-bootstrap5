@@ -15,9 +15,9 @@ Plugins used:
 
 ## Live demo
 
-- https://mandrasch.github.io/11ty-plain-bootstrap5/
+- https://mandrasch.github.io/11ty-plain-bs5/
 
-[![Open in Gitpod](gitpod.svg)](https://gitpod.io/#https://github.com/mandrasch/11ty-plain-bootstrap5)
+[![Open in Gitpod](gitpod.svg)](https://gitpod.io/#https://github.com/mandrasch/11ty-plain-bs5)
 
 ## Usage
 
