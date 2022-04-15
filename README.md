@@ -83,4 +83,4 @@ Sustainable Web Design:
 
 MIT license
 
-_(License is for compatibility purposes only. You don't have attribute my additions, mostly just config stuff done.)_
+_(License is for compatibility purposes with eleventys license only. You don't have attribute my additions, mostly just config stuff done by me.)_
