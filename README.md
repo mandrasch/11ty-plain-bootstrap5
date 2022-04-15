@@ -46,11 +46,11 @@ _Advice: `BASE_URL` should be set as node env variable for open graph image supp
 ## Credits
 
 - Compilation of SCSS/JS via [bergwerk/11ty-mix](https://github.com/bergwerk/11ty-mix) by [@marvinhuebner](https://github.com/marvinhuebner)
-- Some icons used of https://icons.getbootstrap.com/ (included via svg inline)
+- Some icons used of https://icons.getbootstrap.com/ (included via svg inline, MIT license)
 - Inspired by https://github.com/maxboeck/eleventastic (MIT license)
 - https://5balloons.info/setting-up-bootstrap-5-workflow-using-laravel-mix-webpack/
-- Learned a lot with [Eleventy (11ty) Static HTML Theme Conversion (YouTube)](https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr)
-- Layout based on [Jumbotron Example](https://getbootstrap.com/docs/5.0/examples/)
+- Learned a lot from [Eleventy (11ty) Static HTML Theme Conversion (YouTube)](https://www.youtube.com/watch?v=z-o1W9ijUhI&list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr)
+- Layout based on official bootstrap [Jumbotron Example](https://getbootstrap.com/docs/5.0/examples/)
 
 ## Alternatives
 
@@ -83,4 +83,4 @@ Sustainable Web Design:
 
 MIT license
 
-_(License is for compatibility purposes with eleventys license only. You don't have attribute my additions, mostly just config stuff done by me.)_
+_(License is for compatibility purposes with eleventys license only. You don't have to attribute my additions, I did mostly boring config stuff. Please be aware that Eleventy, Bootstrap, Bootstrap Icons and eleventy plugins used are licensed as MIT license.)_
