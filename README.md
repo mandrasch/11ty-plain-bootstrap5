@@ -1,4 +1,4 @@
-# 11ty plain bootstrap5
+# 11ty-plain-bs5
 
 [![Build and Deploy](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml/badge.svg)](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml)
 
