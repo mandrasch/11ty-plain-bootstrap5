@@ -2,7 +2,7 @@
 
 [![Build and Deploy](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml/badge.svg)](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml)
 
-Template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/)
+Minimalistic template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/), just 
 
 - [Bootstrap 5](https://www.npmjs.com/package/bootstrap) (via npm)
 - [Laravel Mix](https://www.npmjs.com/package/laravel-mix) for scss / js (incl. Autoprefixer)
@@ -11,7 +11,7 @@ Plugins used:
 
 - [eleventy-navigation](https://www.11ty.dev/docs/plugins/navigation/)
 - [eleventy-img](https://www.11ty.dev/docs/plugins/image/)
-- [eleventy-rss](https://www.11ty.dev/docs/plugins/rss/) (to get absolute URLs for social media OG-tags)
+- [eleventy-rss](https://www.11ty.dev/docs/plugins/rss/) (to get absolute URLs for social media open graph tags)
 
 ## Live demo
 
