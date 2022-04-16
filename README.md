@@ -7,7 +7,7 @@ Minimalistic template for the awesome static site generator [Eleventy/11ty](http
 - [Bootstrap 5](https://www.npmjs.com/package/bootstrap) (via npm)
 - [Laravel Mix](https://www.npmjs.com/package/laravel-mix) for scss / js (incl. Autoprefixer)
 
-Plugins used:
+Plugins used, but you don't have to keep them:
 
 - [eleventy-navigation](https://www.11ty.dev/docs/plugins/navigation/)
 - [eleventy-img](https://www.11ty.dev/docs/plugins/image/)
