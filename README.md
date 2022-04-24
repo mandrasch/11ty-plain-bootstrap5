@@ -1,11 +1,13 @@
-# 11ty-plain-bs5
+# 11ty-plain-bootstrap5
 
 [![Build and Deploy](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml/badge.svg)](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml)
 
 Minimalistic template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/), just 
 
 - [Bootstrap 5](https://www.npmjs.com/package/bootstrap) (via npm)
-- [Laravel Mix](https://www.npmjs.com/package/laravel-mix) for scss / js (incl. Autoprefixer)
+- [Laravel Mix](https://www.npmjs.com/package/laravel-mix)* for SCSS / JS (incl. Autoprefixer)
+
+_* Laravel Mix is a wrapper around webpack, it is purely NodeJS, no PHP involved ;-)*_
 
 Plugins used (you don't have to keep them):
 
@@ -15,9 +17,9 @@ Plugins used (you don't have to keep them):
 
 ## Live demo
 
-- https://mandrasch.github.io/11ty-plain-bs5/
+- https://mandrasch.github.io/11ty-plain-bootstrap5/
 
-[![Open in Gitpod](gitpod.svg)](https://gitpod.io/#https://github.com/mandrasch/11ty-plain-bs5)
+[![Open in Gitpod](gitpod.svg)](https://gitpod.io/#https://github.com/mandrasch/11ty-plain-bootstrap5)
 
 ## Usage
 
