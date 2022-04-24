@@ -5,9 +5,9 @@
 Minimalistic template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/), just 
 
 - [Bootstrap 5](https://www.npmjs.com/package/bootstrap) (via npm)
-- [Laravel Mix](https://www.npmjs.com/package/laravel-mix)* for SCSS / JS (incl. Autoprefixer)
+- [Laravel Mix](https://www.npmjs.com/package/laravel-mix)* for SCSS / JS compilation (incl. Autoprefixer)
 
-_* Laravel Mix is a wrapper around webpack, it is purely NodeJS, no PHP involved ;-)*_
+_* Laravel Mix is a wrapper around webpack, it is purely NodeJS, no PHP involved ;-)_
 
 Plugins used (you don't have to keep them):
 
