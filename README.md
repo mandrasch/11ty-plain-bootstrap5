@@ -70,14 +70,13 @@ Sustainable Web Design:
 
 ## TODOs
 
-- [ ] Add more demo content with image examples
+- [ ] Add more demo content with image/gallery examples
 - [ ] Improve handling of absolute URLs for open graph image information
 - [ ] Add sitemap.xml (See https://github.com/maxboeck/eleventastic)
 - [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/?
-- [ ] Add basic a11y focus styles
 - [ ] Try https://github.com/11ty/eleventy-plugin-vite with Eleventy v2?
 - [ ] Check a11y with WAVE, aXe, etc. or use automated workflow, e.g. pa11y https://rodneylab.com/sveltekit-accessibility-testing
-- [ ] Add PWA features (see lighthouse suggestions e.g.)
+- [ ] Add PWA features
 
 ## License
 
