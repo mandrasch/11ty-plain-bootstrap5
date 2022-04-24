@@ -72,6 +72,7 @@ Sustainable Web Design:
 
 ## TODOs
 
+- [ ] Add support for Stackblitz (https://stackblitz.com/github/mandrasch/11ty-plain-bootstrap5)
 - [ ] Add more demo content with image/gallery examples
 - [ ] Improve handling of absolute URLs for open graph image information
 - [ ] Add sitemap.xml (See https://github.com/maxboeck/eleventastic)
