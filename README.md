@@ -47,7 +47,7 @@ _Advice: `BASE_URL` should be set as node env variable for open graph image supp
 
 ## Credits
 
-- Compilation of SCSS/JS via [bergwerk/11ty-mix](https://github.com/bergwerk/11ty-mix) by [@marvinhuebner](https://github.com/marvinhuebner)
+- Big thanks to [bergwerk/11ty-mix](https://github.com/bergwerk/11ty-mix) by [@marvinhuebner](https://github.com/marvinhuebner) for example of using Laravel Mix!
 - Some icons used of https://icons.getbootstrap.com/ (included via svg inline, MIT license)
 - Inspired by https://github.com/maxboeck/eleventastic (MIT license)
 - https://5balloons.info/setting-up-bootstrap-5-workflow-using-laravel-mix-webpack/
