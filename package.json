@@ -1,5 +1,5 @@
 {
-  "name": "11ty-plain-bs5",
+  "name": "11ty-plain-bootstrap5",
   "version": "0.0.1",
   "description": "Plain simple template for 11ty/eleventy and bootstrap5.",
   "main": "index.js",
