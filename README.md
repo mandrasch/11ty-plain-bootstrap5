@@ -75,9 +75,10 @@ Sustainable Web Design:
 
 - [ ] Add support for Stackblitz (https://stackblitz.com/github/mandrasch/11ty-plain-bootstrap5)
 - [ ] Add more demo content with image/gallery examples
-- [ ] Improve handling of absolute URLs for open graph image information
+- [ ] Add local google fonts example
+- [ ] Improve handling of absolute URLs for open graph image information and BASE_URL settings
 - [ ] Add sitemap.xml (See https://github.com/maxboeck/eleventastic)
-- [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/?
+- [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/ or https://laravel.com/docs/9.x/mix#versioning-and-cache-busting (would require to read mix-manifest.json file in build step? 
 - [ ] Try https://github.com/11ty/eleventy-plugin-vite with Eleventy v2?
 - [ ] Check a11y with WAVE, aXe, etc. or use automated workflow, e.g. pa11y https://rodneylab.com/sveltekit-accessibility-testing
 - [ ] Add PWA features
