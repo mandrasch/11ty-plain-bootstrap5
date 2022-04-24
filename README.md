@@ -58,6 +58,7 @@ _Advice: `BASE_URL` should be set as node env variable for open graph image supp
 
 - https://11straps.com/
 - https://github.com/mesinkasir/eleventyblog
+- See all starters: https://www.11ty.dev/docs/starter/
 
 ## Technical background:
 
