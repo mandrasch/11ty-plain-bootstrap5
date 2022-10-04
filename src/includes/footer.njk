@@ -4,4 +4,15 @@
     <a href="https://github.com/mandrasch/11ty-plain-bootstrap5">GitHub</a> ·
     <a href="{{ '/pages/imprint' | url }}">Imprint</a> · <a href="{{ '/pages/privacy' | url }}">Privacy</a>
   </p>
+  <div class="row">
+    <div class="col-12 col-md text-center">
+      Built with &#10084 by
+      <br />
+      {% for contributor in contributors %}
+      <a href="{{ contributor.html_url }}">
+        <img src="{{ contributor.avatar_url }}" class="avatar" />
+      </a>
+      {% endfor %}
+    </div>
+  </div>
 </footer>
