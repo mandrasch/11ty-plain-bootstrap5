@@ -2,12 +2,10 @@
 
 [![Build and Deploy](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml/badge.svg)](https://github.com/mandrasch/11ty-plain-bootstrap5/actions/workflows/build-deploy.yaml)
 
-Minimalistic template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/), just 
+Minimalistic template for the awesome static site generator [Eleventy/11ty](https://www.11ty.dev/), just
 
 - [Bootstrap 5](https://www.npmjs.com/package/bootstrap) (via npm)
-- [Laravel Mix](https://www.npmjs.com/package/laravel-mix)* for SCSS / JS compilation (incl. Autoprefixer)
-
-_* Laravel Mix is a wrapper around webpack, it is purely NodeJS, no PHP involved ;-)_
+- Eleventy Vite plugin for eleventy v2
 
 Plugins used (you don't have to keep them):
 
@@ -75,17 +73,16 @@ Sustainable Web Design:
 
 Roadmap:
 
-- [ ] Upgrade bootstrap SCSS to v5.2 https://github.com/mandrasch/11ty-plain-bootstrap5/pulls
-- [ ] Add vite support (https://www.11ty.dev/docs/server-vite/), eleventy v2 needed
+- [ ] Add vite support (https://www.11ty.dev/docs/server-vite/), eleventy v2 needed, https://github.com/matthiasott/eleventy-plus-vite
 
-Ideas: 
+Ideas:
 
 - [ ] Add support for Stackblitz (https://stackblitz.com/github/mandrasch/11ty-plain-bootstrap5)
 - [ ] Add more demo content with image/gallery examples
 - [ ] Add local google fonts example
 - [ ] Improve handling of absolute URLs for open graph image information and BASE_URL settings
 - [ ] Add sitemap.xml (See https://github.com/maxboeck/eleventastic)
-- [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/ or https://laravel.com/docs/9.x/mix#versioning-and-cache-busting (would require to read mix-manifest.json file in build step? 
+- [ ] Add minimalistisc cache busting via timestamp https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/ or https://laravel.com/docs/9.x/mix#versioning-and-cache-busting (would require to read mix-manifest.json file in build step?
 - [ ] Check a11y with WAVE, aXe, etc. or use automated workflow, e.g. pa11y https://rodneylab.com/sveltekit-accessibility-testing
 - [ ] Add PWA features
 

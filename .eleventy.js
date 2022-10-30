@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss"); // needed for absoluteUrl feature
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 
 // Base setup for builds, needed for og tags and correct image paths
 // (mostly for github pages deployment, see build-deploy.yaml)
@@ -65,6 +66,7 @@ module.exports = function (eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(EleventyVitePlugin);
 
   // Copy dist/ files from laravel mix
   eleventyConfig.addPassthroughCopy("dist/"); // path is relative from root
